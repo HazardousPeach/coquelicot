@@ -87,7 +87,6 @@ Proof.
     rewrite -Ropp_minus_distr Rabs_Ropp in H.
     apply Rabs_le_between' in H ; case: H => H _.
     field_simplify in H.
-    rewrite Rdiv_1 in H.
     apply Rle_div_l in H.
     by rewrite Rmult_comm.
     by apply Rlt_0_2.
@@ -97,7 +96,7 @@ Proof.
     rewrite -Ropp_minus_distr Rabs_Ropp in H.
     apply Rabs_le_between' in H ; case: H => _ H.
     field_simplify in H.
-    by rewrite !Rdiv_1 in H.
+    auto.
 Qed.
 
 Lemma domin_rw_l {T} {Ku Kv : AbsRing}
